@@ -1,0 +1,4 @@
+#Mon Nov 13 00:26:34 EST 2017
+base.0=C\:\\Users\\J\\AndroidStudioProjects\\Kinometrix\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+renamed.0=classes.dex
+file.0=C\:\\Users\\J\\AndroidStudioProjects\\Kinometrix\\build\\intermediates\\transforms\\dexMerger\\debug\\5\\classes.dex

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kinometrix.app"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name="com.kinometrix.app.SampleApp"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.kinometrix.app.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.SelectTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.tests.LedTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.tests.LinearAccelerationTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.tests.HeartRateTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.tests.TemperatureTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.tests.MagneticFieldTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.tests.AngularVelocityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.tests.MultiSubscribeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.SendLogsToGoogleDriveActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.kinometrix.app"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.kinometrix.app.api.dfu.DfuActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.kinometrix.app.api.dfu.DfuService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.kinometrix.app.api.adb.AdbBridge"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MOVESENSE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.kinometrix.app.api.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme" >
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name="com.kinometrix.app.api.mainView.MainViewActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MY_ACTION" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.kinometrix.app.api.movesense.MovesenseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.multi_connection.connection.MultiConnectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.saved_data.SavedDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.about.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kinometrix.app.api.sensors.sensors_list.SensorListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.kinometrix.app.api.dfu.DfuActivity2"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.kinometrix.app.api.multi_connection.sensor_usage.MultiSensorUsageActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="548f21c29738f5fef40d342e2968e19cc92f0bb7" />
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="25.4.0" />
+
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.kinometrix.app.com.android.tools.ir.server.InstantRunContentProvider"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

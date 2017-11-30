@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.hanks:htextview-evaporate-0.1.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/htextview-evaporate-0.1.1.aar/aa1e80b5727a9056d470c1e616f22322/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/htextview-evaporate-0.1.1.aar/aa1e80b5727a9056d470c1e616f22322/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hanks/htextview-evaporate/0.1.1/346ddcc3f324c9daffc43f4a601ec5b4f1efcffb/htextview-evaporate-0.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
